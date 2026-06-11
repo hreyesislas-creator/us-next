@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { CallButton } from "./CallButton";
 import { PhoneIcon, MenuIcon, CloseIcon } from "./icons";
@@ -44,15 +45,17 @@ export function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 text-white"
-          aria-label="U.S. Next home"
+          className="flex items-center"
+          aria-label="U.S. Next — Home"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-accent text-base font-black tracking-tighter text-navy-950 lg:h-10 lg:w-10">
-            US
-          </span>
-          <span className="text-lg font-extrabold tracking-tight lg:text-xl">
-            U.S. <span className="text-amber-accent">Next</span>
-          </span>
+          <Image
+            src="/images/logo.png"
+            alt="U.S. Next — You dream it, we build it."
+            width={48}
+            height={48}
+            priority
+            className="h-10 w-10 lg:h-12 lg:w-12"
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -107,6 +110,15 @@ export function Header() {
           className="border-t border-white/10 bg-navy-950 px-4 pb-6 pt-2 lg:hidden"
           aria-label="Mobile"
         >
+          <div className="flex justify-center py-4">
+            <Image
+              src="/images/logo.png"
+              alt="U.S. Next — You dream it, we build it."
+              width={64}
+              height={64}
+              className="h-16 w-16"
+            />
+          </div>
           <ul className="flex flex-col">
             {navLinks.map((link) => (
               <li key={link.href}>

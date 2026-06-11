@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { PhoneIcon } from "./icons";
 
@@ -11,15 +12,18 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2.5 text-white">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-accent text-base font-black tracking-tighter text-navy-950">
-                US
-              </span>
-              <span className="text-lg font-extrabold tracking-tight">
-                U.S. Next
-              </span>
+            <div className="flex justify-center sm:justify-start">
+              <Link href="/" aria-label="U.S. Next — Home">
+                <Image
+                  src="/images/logo.png"
+                  alt="U.S. Next — You dream it, we build it."
+                  width={80}
+                  height={80}
+                  className="h-20 w-20"
+                />
+              </Link>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-slate-400">
+            <p className="mt-4 text-center text-sm leading-relaxed text-slate-400 sm:text-left">
               Reliable handyman, remodeling, and home improvement services for
               local homeowners.
             </p>

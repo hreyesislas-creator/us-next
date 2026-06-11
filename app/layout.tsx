@@ -33,6 +33,14 @@ export const metadata: Metadata = {
     siteName: "U.S. Next",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/images/logo.png",
+        width: 1000,
+        height: 1000,
+        alt: "U.S. Next — You dream it, we build it.",
+      },
+    ],
   },
   alternates: {
     canonical: "https://www.usnext.org/",

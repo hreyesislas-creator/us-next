@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { Footer } from "./Footer";
 import { CallButton } from "./CallButton";
@@ -19,15 +20,17 @@ export function LegalLayout({
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-20 lg:px-8">
           <Link
             href="/"
-            className="flex items-center gap-2.5 text-white"
-            aria-label="U.S. Next home"
+            className="flex items-center"
+            aria-label="U.S. Next — Home"
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-accent text-base font-black tracking-tighter text-navy-950 lg:h-10 lg:w-10">
-              US
-            </span>
-            <span className="text-lg font-extrabold tracking-tight lg:text-xl">
-              U.S. <span className="text-amber-accent">Next</span>
-            </span>
+            <Image
+              src="/images/logo.png"
+              alt="U.S. Next — You dream it, we build it."
+              width={48}
+              height={48}
+              priority
+              className="h-10 w-10 lg:h-12 lg:w-12"
+            />
           </Link>
           <CallButton size="sm" label={`Call ${site.phoneDisplay}`} />
         </div>
